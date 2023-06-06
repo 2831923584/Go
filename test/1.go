@@ -1,11 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	if false {
-		fmt.Println("aaa")
-	} else if true {
-		fmt.Print("bbb")
+	var s, sep string
+	for _, args := range os.Args[1:] {
+		s += sep + args
+		sep = "+"
 	}
+	fmt.Println(s)
 }
